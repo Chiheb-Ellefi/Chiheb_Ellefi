@@ -44,10 +44,9 @@ export default function Home() {
 
 
 
-      {/* ── Projects ── */}
       <section className="w-full px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-6xl mx-auto">
-          <ProjectsSection />
+          <ProjectsSection />  {/* no internal px anymore */}
         </div>
       </section>
 
