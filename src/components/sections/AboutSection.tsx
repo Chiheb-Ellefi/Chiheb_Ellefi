@@ -15,26 +15,24 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="w-full max-w-5xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="w-[80%] mx-auto py-24">
       <p className="text-xs font-mono uppercase tracking-[0.3em] text-primary/50 mb-12">
         01 — About
       </p>
 
       {/* Two-column: image left, content right */}
-      <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
+      <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center md:items-start">
 
-        {/* Image with bottom fade */}
-        <div className="relative shrink-0 w-52 sm:w-60 md:w-64">
+        {/* Circular Image */}
+        <div className="relative shrink-0 w-72 sm:w-80 md:w-96 aspect-square rounded-full overflow-hidden border-2 border-primary/10 shadow-xl">
           <Image
             src={meImg}
             alt="Chiheb Ellefi"
-            width={256}
-            height={320}
-            className="w-full h-auto object-cover"
+            width={400}
+            height={400}
+            className="w-full h-full object-cover"
             priority
           />
-          {/* Bottom fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-background to-transparent pointer-events-none" />
         </div>
 
         {/* Content */}
