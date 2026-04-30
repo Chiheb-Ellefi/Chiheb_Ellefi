@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import meImg from "../../../../public/assets/me.png";
+
 export default function AboutSection() {
   const backendSkills = [
     "Java", "Spring Boot", "Spring Security", "OAuth2 / JWT",
@@ -24,7 +26,7 @@ export default function AboutSection() {
         {/* Image with bottom fade */}
         <div className="relative shrink-0 w-52 sm:w-60 md:w-64">
           <Image
-            src="/assets/me.png"
+            src={meImg}
             alt="Chiheb Ellefi"
             width={256}
             height={320}
