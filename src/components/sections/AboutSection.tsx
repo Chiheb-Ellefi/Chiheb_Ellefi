@@ -15,64 +15,40 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="w-[90%] max-w-[1400px] mx-auto py-24">
+    <section id="about" className="w-full max-w-5xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
       <p className="text-xs font-mono uppercase tracking-[0.3em] text-primary/50 mb-12">
         01 — About
       </p>
 
-      {/* Mobile Header: Image and Name in a single row */}
-      <div className="flex md:hidden items-center gap-6 mb-10">
-        <div className="relative w-28 h-28 sm:w-36 sm:h-36 shrink-0 rounded-full overflow-hidden border-2 border-primary/20">
-          <Image
-            src={meImg}
-            alt="Chiheb Ellefi"
-            fill
-            className="object-cover object-top scale-[1.15]"
-            priority
-          />
-        </div>
-        <div>
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-none mb-3">
-            Chiheb Ellefi
-          </h1>
-          <p className="font-mono text-xs sm:text-sm uppercase tracking-widest text-muted-foreground leading-relaxed">
-            Backend Developer<br />
-            System Design · DevOps
-          </p>
-        </div>
-      </div>
+      {/* Two-column: image left, content right */}
+      <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
 
-      {/* Main Layout */}
-      <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-stretch">
-        
-        {/* Desktop Image: Matches height of content, zoomed in on face */}
-        <div className="hidden md:block relative w-[40%] lg:w-[45%] shrink-0 rounded-2xl overflow-hidden bg-muted/20">
+        {/* Image with bottom fade */}
+        <div className="relative shrink-0 w-52 sm:w-60 md:w-64">
           <Image
             src={meImg}
             alt="Chiheb Ellefi"
-            fill
-            className="object-cover object-top scale-[1.15] transition-transform duration-700 hover:scale-[1.2]"
+            width={256}
+            height={320}
+            className="w-full h-auto object-cover"
             priority
           />
           {/* Bottom fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-background to-transparent pointer-events-none" />
         </div>
 
-        {/* Content Section */}
-        <div className="flex-1 flex flex-col justify-center py-4">
-          
-          {/* Desktop Header */}
-          <div className="hidden md:block mb-10">
-            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-none mb-4">
+        {/* Content */}
+        <div className="flex-1">
+          <div className="mb-10">
+            <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-foreground leading-none mb-4">
               Chiheb Ellefi
             </h1>
-            <p className="font-mono text-sm lg:text-base uppercase tracking-widest text-muted-foreground">
+            <p className="font-mono text-sm uppercase tracking-widest text-muted-foreground">
               Backend Developer · System Design · DevOps
             </p>
           </div>
 
-          {/* About Me Text */}
-          <div className="space-y-6 mb-14 text-foreground/70 leading-relaxed text-base lg:text-xl">
+          <div className="space-y-5 mb-14 text-foreground/70 leading-relaxed text-base sm:text-lg max-w-xl">
             <p>
               I'm a backend-focused developer with a deep interest in how systems behave
               in production — not just how they are built. I spend most of my time
@@ -91,7 +67,6 @@ export default function AboutSection() {
             </p>
           </div>
 
-          {/* Skills Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <div>
               <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary/50 mb-4">
@@ -99,7 +74,7 @@ export default function AboutSection() {
               </p>
               <div className="flex flex-wrap gap-x-3 gap-y-2">
                 {backendSkills.map((skill, i) => (
-                  <span key={skill} className="text-sm lg:text-base text-foreground/60 font-mono">
+                  <span key={skill} className="text-sm text-foreground/60 font-mono">
                     {skill}{i < backendSkills.length - 1 ? "," : ""}
                   </span>
                 ))}
@@ -111,7 +86,7 @@ export default function AboutSection() {
               </p>
               <div className="flex flex-wrap gap-x-3 gap-y-2">
                 {infraSkills.map((skill, i) => (
-                  <span key={skill} className="text-sm lg:text-base text-foreground/60 font-mono">
+                  <span key={skill} className="text-sm text-foreground/60 font-mono">
                     {skill}{i < infraSkills.length - 1 ? "," : ""}
                   </span>
                 ))}
