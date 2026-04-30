@@ -3,7 +3,7 @@
 import ArchitectureDiagram from "@/components/system/ArchitectureDiagram";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
-import TerminalSection from "@/components/sections/TerminalSection";
+
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
           </p>
 
           {/* Diagram — full-width, generous height, no inner border box */}
-          <div className="w-full h-[700px]">
+          <div className="w-full h-[900px]">
             <ArchitectureDiagram />
           </div>
         </div>
@@ -42,18 +42,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── System Activity (Terminal) ── */}
-      <section className="w-full py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-xs font-mono uppercase tracking-[0.3em] text-primary/50 mb-4">
-            System Activity
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-10">
-            Live Monitor
-          </h2>
-          <TerminalSection />
-        </div>
-      </section>
+
 
       {/* ── Projects ── */}
       <section className="w-full px-4 sm:px-6 lg:px-8 pb-20">
