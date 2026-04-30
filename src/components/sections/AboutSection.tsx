@@ -28,7 +28,7 @@ export default function AboutSection() {
             alt="Chiheb Ellefi"
             width={256}
             height={320}
-            className="w-full object-cover"
+            className="w-full h-auto object-cover"
             priority
           />
           {/* Bottom fade */}
