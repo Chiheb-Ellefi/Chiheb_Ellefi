@@ -14,15 +14,15 @@ export default function Footer() {
             <Code size={20} />
             <span className="text-sm font-medium">GitHub</span>
           </a>
-          <a href="https://linkedin.com/in/chihebellefi" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors group flex items-center gap-2">
+          <a href="https://www.linkedin.com/in/chiheb-ellefi/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors group flex items-center gap-2">
             <Briefcase size={20} />
             <span className="text-sm font-medium">LinkedIn</span>
           </a>
-          <a href="mailto:chiheb.ellefi@example.com" className="text-muted-foreground hover:text-foreground transition-colors group flex items-center gap-2">
+          <a href="mailto:chiheb.ellefi@etudiant-isi.utm.tn" className="text-muted-foreground hover:text-foreground transition-colors group flex items-center gap-2">
             <Mail size={20} />
             <span className="text-sm font-medium">Email</span>
           </a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-primary/10 text-primary hover:bg-primary/20 transition-colors rounded-full flex items-center gap-2 text-sm font-medium">
+          <a href="resume.pdf" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-primary/10 text-primary hover:bg-primary/20 transition-colors rounded-full flex items-center gap-2 text-sm font-medium">
             <FileText size={16} />
             <span>Resume</span>
           </a>
