@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import meImg from "../../../public/assets/me.png";
 
 export default function AboutSection() {
@@ -34,18 +35,25 @@ export default function AboutSection() {
       <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center w-full">
 
         {/* Image */}
-        <div className="flex-shrink-0 pl-8 md:pl-16 w-full md:w-[340px] lg:w-[420px] xl:w-[480px]">
-          <div className="relative w-full aspect-square rounded-full overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background z-10 pointer-events-none" />
-            <Image
-              src={meImg}
-              alt="Chiheb Ellefi"
-              fill
-              className="object-cover"
-              priority
-            />
+        <motion.div 
+          className="flex-shrink-0 pl-8 md:pl-16 w-full md:w-[340px] lg:w-[420px] xl:w-[480px]"
+          animate={{ y: [-10, 10, -10] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div className="relative w-full aspect-square">
+            {/* Image Circle */}
+            <div className="relative w-full h-full rounded-full overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background z-10 pointer-events-none" />
+              <Image
+                src={meImg}
+                alt="Chiheb Ellefi"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Paragraphs only */}
         <div className="flex-1 min-w-0 pr-8 md:pr-16 space-y-5 text-foreground/70 leading-relaxed text-base sm:text-lg">
