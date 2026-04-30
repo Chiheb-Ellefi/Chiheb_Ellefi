@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import meImg from "../../../../public/assets/me.png";
+import meImg from "../../../public/assets/me.png";
 
 export default function AboutSection() {
   const backendSkills = [
