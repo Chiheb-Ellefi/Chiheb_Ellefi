@@ -2,25 +2,18 @@
 
 import { ReactNode, useState } from "react";
 import { Terminal, Activity, GitBranch, User, Cpu, Menu, X } from "lucide-react";
-import TerminalOverlay from "@/components/terminal/TerminalOverlay";
-import ProjectsModal from "@/components/modals/ProjectsModal";
-import AboutModal from "@/components/modals/AboutModal";
-import { useTerminalStore } from "@/store/useTerminalStore";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
-  const toggleTerminal = useTerminalStore(state => state.toggleTerminal);
-  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   return (
     <div className="flex h-screen w-full bg-background text-foreground overflow-hidden">
-      {/* Sidebar / Left Navigation */}
+      {/* Sidebar / Left Navigation (Mobile Only now or kept as drawer) */}
       <aside 
         className={`
           fixed inset-y-0 left-0 z-50 w-64 bg-card border-r border-border flex flex-col py-4 gap-6 shadow-xl transform transition-transform duration-300 ease-in-out
           ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}
-          md:relative md:translate-x-0 md:w-16 md:hover:w-56 md:group md:items-center
+          md:hidden
         `}
       >
         <div className="flex items-center justify-between px-4 md:px-0 md:justify-center w-full shrink-0">
@@ -37,10 +30,10 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
         </div>
         
         <nav className="flex flex-col gap-2 w-full px-3 overflow-hidden">
-          <SidebarItem icon={<Activity size={20} />} label="Architecture" onClick={() => setIsMobileMenuOpen(false)} />
-          <SidebarItem icon={<Terminal size={20} />} label="Terminal" onClick={() => { toggleTerminal(); setIsMobileMenuOpen(false); }} />
-          <SidebarItem icon={<User size={20} />} label="About Me" onClick={() => { setIsAboutOpen(true); setIsMobileMenuOpen(false); }} />
-          <SidebarItem icon={<GitBranch size={20} />} label="Projects" onClick={() => { setIsProjectsOpen(true); setIsMobileMenuOpen(false); }} />
+          <SidebarItem icon={<User size={20} />} label="About Me" href="#about" onClick={() => setIsMobileMenuOpen(false)} />
+          <SidebarItem icon={<Activity size={20} />} label="Cluster" href="#cluster" onClick={() => setIsMobileMenuOpen(false)} />
+          <SidebarItem icon={<Terminal size={20} />} label="Terminal" href="#terminal" onClick={() => setIsMobileMenuOpen(false)} />
+          <SidebarItem icon={<GitBranch size={20} />} label="Projects" href="#projects" onClick={() => setIsMobileMenuOpen(false)} />
         </nav>
       </aside>
 
@@ -70,30 +63,34 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
               <span className="hidden xs:inline">Operational</span>
             </span>
           </div>
-          <div className="flex items-center gap-3 md:gap-4 text-[10px] md:text-xs font-mono text-muted-foreground truncate">
-            <span className="hidden sm:inline">CLUSTER: cl-alpha-01</span>
-            <span className="hidden lg:inline">REGION: global-edge</span>
-          </div>
+          
+          {/* Desktop Navbar */}
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
+            <a href="#about" className="hover:text-foreground transition-colors">About Me</a>
+            <a href="#cluster" className="hover:text-foreground transition-colors">Cluster</a>
+            <a href="#terminal" className="hover:text-foreground transition-colors">Terminal</a>
+            <a href="#projects" className="hover:text-foreground transition-colors">Projects</a>
+          </nav>
         </header>
 
         {/* Dashboard Content */}
-        <main className="flex-1 overflow-hidden relative bg-black/20">
+        <main className="flex-1 overflow-y-auto relative bg-black/20 custom-scrollbar scroll-smooth">
           {/* A grid overlay pattern for that techy look */}
-          <div className="absolute inset-0 pointer-events-none opacity-[0.03]" 
+          <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-0" 
                style={{ backgroundImage: 'linear-gradient(to right, #888 1px, transparent 1px), linear-gradient(to bottom, #888 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-          {children}
-          <TerminalOverlay />
-          <ProjectsModal isOpen={isProjectsOpen} onClose={() => setIsProjectsOpen(false)} />
-          <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
+          <div className="relative z-10">
+            {children}
+          </div>
         </main>
       </div>
     </div>
   );
 }
 
-function SidebarItem({ icon, label, onClick }: { icon: ReactNode; label: string; onClick?: () => void }) {
+function SidebarItem({ icon, label, href, onClick }: { icon: ReactNode; label: string; href: string; onClick?: () => void }) {
   return (
-    <button 
+    <a 
+      href={href}
       onClick={onClick}
       className="flex items-center gap-4 w-full p-3 md:p-2.5 hover:bg-border rounded-lg text-muted-foreground hover:text-foreground transition-all duration-200 whitespace-nowrap overflow-hidden"
     >
@@ -103,6 +100,6 @@ function SidebarItem({ icon, label, onClick }: { icon: ReactNode; label: string;
       <span className="text-sm font-medium md:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         {label}
       </span>
-    </button>
+    </a>
   );
 }

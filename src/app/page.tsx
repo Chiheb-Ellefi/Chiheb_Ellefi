@@ -1,47 +1,32 @@
 "use client";
 
 import ArchitectureDiagram from "@/components/system/ArchitectureDiagram";
-import SimulationControls from "@/components/controls/SimulationControls";
-import TourGuide from "@/components/system/TourGuide";
-import { useState } from "react";
-import { Settings2, X } from "lucide-react";
+import AboutSection from "@/components/sections/AboutSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import TerminalSection from "@/components/sections/TerminalSection";
 
 export default function Home() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
   return (
-    <div className="flex w-full h-full relative">
-      {/* Main Architecture View */}
-      <div className="flex-1 relative overflow-hidden">
-        <TourGuide />
-        <ArchitectureDiagram />
-      </div>
+    <div className="flex flex-col w-full min-h-screen pb-20">
+      <AboutSection />
       
-      {/* Mobile Toggle for Simulation Controls */}
-      <button 
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="md:hidden fixed bottom-20 right-4 z-50 p-3 rounded-full bg-primary text-primary-foreground shadow-lg transition-transform active:scale-95"
-      >
-        {isSidebarOpen ? <X size={24} /> : <Settings2 size={24} />}
-      </button>
+      <section id="cluster" className="w-full max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div className="bg-card/80 backdrop-blur-sm rounded-xl border border-border flex flex-col shadow-xl overflow-hidden h-[600px]">
+          <div className="flex items-center justify-between p-4 border-b border-border bg-black/20">
+            <div className="flex items-center gap-2 font-semibold">
+              <span className="text-primary">●</span>
+              <span>Services Cluster</span>
+            </div>
+          </div>
+          <div className="flex-1 relative">
+            <ArchitectureDiagram />
+          </div>
+        </div>
+      </section>
 
-      {/* Simulation Controls Sidebar */}
-      <div className={`
-        fixed inset-y-0 right-0 z-40 w-full sm:w-80 border-l border-border bg-card/95 backdrop-blur-md flex flex-col 
-        transition-transform duration-300 ease-in-out transform
-        ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'}
-        md:relative md:translate-x-0 md:bg-card/50 md:backdrop-blur-sm
-      `}>
-        <SimulationControls />
-      </div>
-
-      {/* Overlay for mobile sidebar */}
-      {isSidebarOpen && (
-        <div 
-          className="md:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-30" 
-          onClick={() => setIsSidebarOpen(false)}
-        />
-      )}
+      <TerminalSection />
+      
+      <ProjectsSection />
     </div>
   );
 }
