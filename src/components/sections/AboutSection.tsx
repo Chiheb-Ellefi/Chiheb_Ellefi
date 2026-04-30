@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 export default function AboutSection() {
   const backendSkills = [
     "Java", "Spring Boot", "Spring Security", "OAuth2 / JWT",
@@ -23,10 +23,13 @@ export default function AboutSection() {
 
         {/* Image with bottom fade */}
         <div className="relative shrink-0 w-52 sm:w-60 md:w-64">
-          <img
+          <Image
             src="/assets/me.png"
             alt="Chiheb Ellefi"
+            width={256}
+            height={320}
             className="w-full object-cover"
+            priority
           />
           {/* Bottom fade */}
           <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-background to-transparent pointer-events-none" />
