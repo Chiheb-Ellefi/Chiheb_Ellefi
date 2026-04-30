@@ -35,7 +35,7 @@ export default function AboutSection() {
       <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center w-full">
 
         {/* Image */}
-        <motion.div 
+        <motion.div
           className="flex-shrink-0 pl-8 md:pl-16 w-full md:w-[340px] lg:w-[420px] xl:w-[480px]"
           animate={{ y: [-10, 10, -10] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -58,20 +58,28 @@ export default function AboutSection() {
         {/* Paragraphs only */}
         <div className="flex-1 min-w-0 pr-8 md:pr-16 space-y-5 text-foreground/70 leading-relaxed text-base sm:text-lg">
           <p>
-            I'm a backend-focused developer with a deep interest in how systems behave
-            in production — not just how they are built. I spend most of my time
-            designing distributed systems, exploring trade-offs, and understanding the
-            mechanics behind scalability, fault tolerance, and performance.
+            I'm a backend-focused developer with a deep interest in how
+            systems behave in production — not just how they are built.
+            I spend most of my time studying distributed systems, exploring
+            trade-offs, and understanding the mechanics behind scalability,
+            fault tolerance, and performance.
           </p>
+
           <p>
-            My work revolves around the Spring ecosystem, event-driven architectures,
-            and infrastructure tooling — OAuth2 flows, API gateways, service discovery,
-            caching strategies, and asynchronous messaging. I'm drawn to how components
-            interact: how a request flows, how failures propagate, how systems recover.
+            My work revolves around the
+            Spring ecosystem, event-driven architectures, and infrastructure
+            tooling — OAuth2 flows, API gateways, service discovery, caching
+            strategies, and asynchronous messaging.
+            I'm drawn to how components interact: how a request flows, how
+            failures propagate, how systems recover.
           </p>
+
           <p>
-            This portfolio is a live system, not a static showcase. Explore services,
-            simulate traffic, trigger failures — and watch how the architecture reacts.
+            But more than any stack or framework — I chase the abstraction
+            beneath. I don't adopt a technology to use it; I use it to
+            understand what it's hiding. That's what makes switching tools
+            effortless — when you've seen what lives under the surface,
+            the surface changes don't matter much.
           </p>
         </div>
       </div>
