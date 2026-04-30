@@ -3,8 +3,7 @@
 import ArchitectureDiagram from "@/components/system/ArchitectureDiagram";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
-
-
+import Footer from "@/components/layout/Footer";
 export default function Home() {
   return (
     <div className="flex flex-col w-full min-h-screen">
@@ -43,14 +42,13 @@ export default function Home() {
         </div>
       </section>
 
-
-
       <section className="w-full px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-6xl mx-auto">
-          <ProjectsSection />  {/* no internal px anymore */}
+          <ProjectsSection />
         </div>
       </section>
 
+      <Footer />
     </div>
   );
 }
