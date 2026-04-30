@@ -32,7 +32,6 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
         <nav className="flex flex-col gap-2 w-full px-3 overflow-hidden">
           <SidebarItem icon={<User size={20} />} label="About Me" href="#about" onClick={() => setIsMobileMenuOpen(false)} />
           <SidebarItem icon={<Activity size={20} />} label="Cluster" href="#cluster" onClick={() => setIsMobileMenuOpen(false)} />
-          <SidebarItem icon={<Terminal size={20} />} label="Terminal" href="#terminal" onClick={() => setIsMobileMenuOpen(false)} />
           <SidebarItem icon={<GitBranch size={20} />} label="Projects" href="#projects" onClick={() => setIsMobileMenuOpen(false)} />
         </nav>
       </aside>
@@ -68,7 +67,6 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
             <a href="#about" className="hover:text-foreground transition-colors">About Me</a>
             <a href="#cluster" className="hover:text-foreground transition-colors">Cluster</a>
-            <a href="#terminal" className="hover:text-foreground transition-colors">Terminal</a>
             <a href="#projects" className="hover:text-foreground transition-colors">Projects</a>
           </nav>
         </header>

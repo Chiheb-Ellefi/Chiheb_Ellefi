@@ -25,7 +25,7 @@ export default function ProjectsSection() {
   const rest = projects.slice(FEATURED_COUNT);
 
   return (
-    <section id="projects" className="w-full max-w-5xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="w-full py-24 px-8 md:px-16">
       {/* Section header */}
       <div className="mb-14">
         <p className="text-xs font-mono uppercase tracking-[0.3em] text-primary/50 mb-4">
