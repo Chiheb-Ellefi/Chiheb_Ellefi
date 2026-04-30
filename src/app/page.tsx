@@ -24,10 +24,11 @@ export default function Home() {
             02 — Architecture
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-4">
-            Services Cluster
+            The Cluster
           </h2>
           <p className="text-muted-foreground mb-10 max-w-xl">
-            An interactive map of the interconnected microservices architecture powering this system.
+            Not one system — many.
+            Each node is an independent project I built, visualized here as a cluster because that's how I think about software: nothing exists in isolation.
           </p>
 
           {/* Diagram — full-width, generous height, no inner border box */}
