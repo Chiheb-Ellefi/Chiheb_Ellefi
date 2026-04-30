@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Chiheb System | Interactive Distributed Platform",
+  title: "Chiheb Ellefi | A young man  driven to succeed - Software Engineering Student",
   description: "An interactive engineering portfolio simulating a live distributed system.",
 };
 
