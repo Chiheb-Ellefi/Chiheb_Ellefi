@@ -42,20 +42,28 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
 
                   <div className="prose prose-invert prose-sm max-w-none text-muted-foreground">
                     <p>
-                      I’m a backend-focused software developer with a strong interest in how systems behave in production — not just how they are built.
-                      I spend most of my time designing and implementing distributed systems, exploring trade-offs, and understanding the mechanics behind scalability, fault tolerance, and performance.
+                      I'm a backend-focused developer with a deep interest in how
+                      systems behave in production — not just how they are built.
+                      I spend most of my time studying distributed systems, exploring
+                      trade-offs, and understanding the mechanics behind scalability,
+                      fault tolerance, and performance.
                     </p>
 
                     <p>
-                      My work revolves around the Spring ecosystem, event-driven architectures, and infrastructure tooling. I’ve built systems using
-                      OAuth2/OpenID authentication flows, API gateways, service discovery, caching strategies, and asynchronous messaging.
-                      I’m particularly interested in how components interact: how a request flows, how failures propagate, and how systems recover.
+                      My work revolves around the
+                      Spring ecosystem, event-driven architectures, and infrastructure
+                      tooling — OAuth2 flows, API gateways, service discovery, caching
+                      strategies, and asynchronous messaging.
+                      I'm drawn to how components interact: how a request flows, how
+                      failures propagate, how systems recover.
                     </p>
 
                     <p>
-                      This portfolio is designed as a live system rather than a static showcase.
-                      You can explore services, simulate traffic, trigger failures, and observe how the system reacts — reflecting how I think about software:
-                      as interconnected, evolving systems rather than isolated pieces of code.
+                      But more than any stack or framework — I chase the abstraction
+                      beneath. I don't adopt a technology to use it; I use it to
+                      understand what it's hiding. That's what makes switching tools
+                      effortless — when you've seen what lives under the surface,
+                      the surface changes don't matter much.
                     </p>
                   </div>
 
