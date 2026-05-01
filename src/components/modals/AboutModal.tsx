@@ -59,11 +59,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                     </p>
 
                     <p>
-                      But more than any stack or framework — I chase the abstraction
-                      beneath. I don't adopt a technology to use it; I use it to
-                      understand what it's hiding. That's what makes switching tools
-                      effortless — when you've seen what lives under the surface,
-                      the surface changes don't matter much.
+                      I'm currently pursuing a Software Engineering degree in Tunisia, building projects that push me beyond coursework and into problems I actually find interesting. I'm always looking for environments where I can contribute, learn from experienced engineers, and work on systems that matter.
                     </p>
                   </div>
 
