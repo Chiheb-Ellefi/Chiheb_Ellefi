@@ -11,8 +11,8 @@ export default function AboutSection() {
   ];
 
   const infraSkills = [
-    "Docker", "Linux (Fedora)", "Redis", "PostgreSQL",
-    "Kafka", "Nginx", "CI/CD", "Git & GitHub",
+    "Docker", "Linux (Fedora)", "Redis", "PostgreSQL", "MongoDB", "Firebase",
+    "Kubernetes", "Swarm", "Git & GitHub",
   ];
 
   return (
